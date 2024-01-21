@@ -92,6 +92,72 @@ The closrue contains all the variables used by the function. The variables not u
 
 The key thing to remember is that when a function gets declared, it contains a function definition and a closure.
 
+## What are the benefits of closures?
+
+- **Encapsulation**: Closures allow for the creation of private variables and functions. Variables within a closure are not directly accessible from the outside, helping to maintain the integrity and security of the data.
+
+- **Maintaining State**: Closures enable the creation of functions that can maintain and update their internal state across multiple invocations. This is particularly useful for scenarios where you need to keep track of some information between function calls without exposing it globally.
+
+- **Module Pattern**: Closures are instrumental in implementing the module pattern in JavaScript. By creating a function that returns an object containing methods and variables, you can simulate private and public members, achieving a level of organization and encapsulation.
+
+```js
+function myModule() {
+  // Private variables and functions
+  var privateVar = 'I am private';
+
+  function privateFunction() {
+    console.log('This is a private function');
+  }
+
+  // Public API (methods and variables accessible from the outside)
+  return {
+    // Public variables
+    publicVar: 'I am public',
+
+    // Public function
+    publicFunction: function () {
+      console.log('This is a public function');
+      // It can access private variables and functions
+      console.log(privateVar);
+      privateFunction();
+    },
+  };
+}
+```
+
+- **Factory Functions**: Closures are often used in the creation of factory functions. These functions produce and return other functions with specific behaviors or configurations based on the arguments provided. This allows for the creation of reusable and customizable code.
+
+```js
+function createMathOperation(operationType) {
+  return function (operand1, operand2) {
+    switch (operationType) {
+      case 'add':
+        return operand1 + operand2;
+      case 'subtract':
+        return operand1 - operand2;
+      case 'multiply':
+        return operand1 * operand2;
+      case 'divide':
+        return operand1 / operand2;
+      default:
+        throw new Error('Invalid operation type');
+    }
+  };
+}
+
+// Create specific math operation functions using the factory
+var addFunction = createMathOperation('add');
+var subtractFunction = createMathOperation('subtract');
+var multiplyFunction = createMathOperation('multiply');
+var divideFunction = createMathOperation('divide');
+
+// Use the created functions
+console.log(addFunction(5, 3)); // Output: 8
+console.log(subtractFunction(8, 2)); // Output: 6
+console.log(multiplyFunction(4, 6)); // Output: 24
+console.log(divideFunction(10, 2)); // Output: 5
+```
+
 ## Read More Sources
 
 - [Scopes of Variables](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript#:~:text=Javascript%20uses%20scope%20chains%20to,linked%20to%20the%20outer%20function.)
