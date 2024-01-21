@@ -14,6 +14,8 @@ In compilation, `a` is allocated memory. In exection, JS Engine finds `a` in the
 
 If the variable is not found in global scope, a `Reference Error` is thrown, if we are in `strict mode`. However, in `non-strict mode`, the variable is created in the global scope.
 
+About the errors, the `Reference Error` is related to scopes. If scope resolution fails for a variable, we will encounter this error. On the other hand, with `Type Error`, scope resolution was successful. But we are trying to perform some illegal operation on the result of scope resolution. For example, invoking a primitive as a function, trying to reference a property on an `undefined` or `null` value.
+
 ## What are Scopes in JavaScript?
 
 Scopes are sections of our code where a variable is defined and can be accessed.
