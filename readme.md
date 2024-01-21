@@ -62,6 +62,14 @@ In nested scopes, we can have variables with the same name. In that case, JS eng
 
 A thing to note here is that in JavaScript, variables in the global scope are part of the window object. So if we were to access these variables in a lexical scope, we can use `window.variableName`. This way we can access variables declared in global scope that would have been otherwise inaccessbile due to shadowing. However, its important to note, that non-global shadowed variables can't be accessed.
 
+## What is the importance of Scopes?
+
+Scopes are important because:
+
+- **Avoiding Variable Name Collisions**: Different parts of a program might use the same variable names for different purposes. By using scopes, you can create local variables that are only accessible within a specific scope, preventing unintentional collisions with variables in other parts of the program. This helps in maintaining code integrity and readability.
+
+- **Encapsulation**: Scopes contribute to the concept of encapsulation, where the internal details of a function or block of code are hidden from the outside world. This is important in preventing unintended data corruption or unauthorized access.
+
 ## What are Closures in JavaScript?
 
 Closures in JavaScript is a concept which allows a function to gain access to all the variables declared outside of its own scope. A function bundled with the surrounding scopes forms a closure.
