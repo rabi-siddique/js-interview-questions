@@ -16,6 +16,11 @@ If the variable is not found in global scope, a `Reference Error` is thrown, if 
 
 About the errors, the `Reference Error` is related to scopes. If scope resolution fails for a variable, we will encounter this error. On the other hand, with `Type Error`, scope resolution was successful. But we are trying to perform some illegal operation on the result of scope resolution. For example, invoking a primitive as a function, trying to reference a property on an `undefined` or `null` value.
 
+Lexical Scope is the scope that is defined at lexing time. No matter where a function is invoked from or how it is invoked, its lexical scope is always defined by where the function was declared. To cheat the lexical scope at runtime:
+
+- eval funcion
+- with
+
 ## What are Scopes in JavaScript?
 
 Scopes are sections of our code where a variable is defined and can be accessed.
