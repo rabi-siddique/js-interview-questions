@@ -45,3 +45,9 @@ A thing to note here is that in JavaScript, variables in the global scope are pa
 
 Closures in JavaScript is a concept which allows a function to gain access to all the variables declared outside of its own scope. A function bundled with the surrounding scopes forms a closure.
 Now this is powerful because because of this functions can persist state values.We can acheive encapsulation via closures. Using closures you can not manipulate variables directly. For any such operation you have to make use of the function which has a closure.
+
+## Read More Sources
+
+[Scopes of Variables](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript#:~:text=Javascript%20uses%20scope%20chains%20to,linked%20to%20the%20outer%20function.)
+[UnderStanding Scope and Scope Chain in JavaScript](https://blog.bitsrc.io/understanding-scope-and-scope-chain-in-javascript-f6637978cf53#:~:text=JavaScript%20uses%20lexical%20scope%20which,every%20JavaScript%20developer%20should%20understand.)
+[Closures](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
