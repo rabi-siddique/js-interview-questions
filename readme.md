@@ -1,5 +1,7 @@
 # Scopes and Closures
 
+## Scopes
+
 Scope is like a look up list for variables. It enforces a set of rules related to the accessibility of these variables for the currently executing code.
 
 When JavaScript code is being compiled, variables are allocated memory. However when execution of code happens, the variable assignments are performed.
@@ -20,6 +22,16 @@ Lexical Scope is the scope that is defined at lexing time. No matter where a fun
 
 - eval funcion
 - with
+
+## Closures
+
+A closure is mechanism through which a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+
+When a function is called in JavaScript, a new local memory, also known as a variable environment or state, is created for that function's execution context. This local memory stores the function's variables parameters, and references to any variables from outer scopes that the function needs. After the function completes its execution, its local memory is typically deleted or garbage-collected, except for the returned value (if any).
+
+Closures allow functions to retain access to variables from the outercontaining scopes even after the outer function has finished executing. This means that a function returned from another function (creating a closure) can still access and manipulate the variables of its parent function, even if the parent function's local memory was deleted.
+
+This allows for powerful patterns like encapsulation, data hiding, and maintaining state across function calls.
 
 ## What are Scopes in JavaScript?
 
@@ -72,8 +84,13 @@ Scopes are important because:
 
 ## What are Closures in JavaScript?
 
-Closures in JavaScript is a concept which allows a function to gain access to all the variables declared outside of its own scope. A function bundled with the surrounding scopes forms a closure.
-Now this is powerful because because of this functions can persist state values.We can acheive encapsulation via closures. Using closures you can not manipulate variables directly. For any such operation you have to make use of the function which has a closure.
+Closures in JavaScript is a concept which allows a function to gain access to all the variables declared outside of its own scope. A function bundled with the surrounding scopes forms a closure. Now this is powerful because it let our function definitions have an associated cache/persistent memory.
+
+Closure acts as a permanent memory for the function. The local memory of the function is deleted when the function execution is completed. However, the closure which is like a backpack of data, is permanent. It persists in subsequent function calls.
+
+The closrue contains all the variables used by the function. The variables not used inside the function are not linked to its closure. JavaScript does this optimization for us. JavaScript Engine sees inside the function definition to get an idea of what variables are being used by it. It then adds only the variable used inside the function definition to the closure.
+
+The key thing to remember is that when a function gets declared, it contains a function definition and a closure.
 
 ## Read More Sources
 
