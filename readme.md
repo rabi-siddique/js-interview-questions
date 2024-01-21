@@ -64,6 +64,6 @@ Now this is powerful because because of this functions can persist state values.
 
 ## Read More Sources
 
-[Scopes of Variables](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript#:~:text=Javascript%20uses%20scope%20chains%20to,linked%20to%20the%20outer%20function.)
-[UnderStanding Scope and Scope Chain in JavaScript](https://blog.bitsrc.io/understanding-scope-and-scope-chain-in-javascript-f6637978cf53#:~:text=JavaScript%20uses%20lexical%20scope%20which,every%20JavaScript%20developer%20should%20understand.)
-[Closures](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
+- [Scopes of Variables](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript#:~:text=Javascript%20uses%20scope%20chains%20to,linked%20to%20the%20outer%20function.)
+- [UnderStanding Scope and Scope Chain in JavaScript](https://blog.bitsrc.io/understanding-scope-and-scope-chain-in-javascript-f6637978cf53#:~:text=JavaScript%20uses%20lexical%20scope%20which,every%20JavaScript%20developer%20should%20understand.)
+- [Closures](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
