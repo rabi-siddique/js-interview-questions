@@ -35,7 +35,7 @@ There are three factors that determine the scope of a variable:
 
 ## What is Lexical Scope?
 
-Scopes are determined at compile time. And at compile time it is determined by examining the location a function is declared. Instead of where it is being invoked. Hence, Lexical scope means that scope is defined where the functions are declared by looking the structure of the code.
+Scopes are determined at compile time. And at compile time it is determined by examining the location where the function is declared. Lexical scope means that no matter where a function is invoked from or how it is invoked, its lexical scope is always defined by where the function was declared.
 
 In other words, lexical scope refers to the ability of a function scope to access variables from the parent scope. When there is lexical scope, the innermost and outermost functions may access all variables from their parent scopes all the way up to the global scope.
 
