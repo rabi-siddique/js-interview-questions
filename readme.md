@@ -1,4 +1,18 @@
-# Scopes
+# Scopes and Closures
+
+Scope is like a look up list for variables. It enforces a set of rules related to the accessibility of these variables for the currently executing code.
+
+When JavaScript code is being compiled, variables are allocated memory. However when execution of code happens, the variable assignments are performed.
+
+Consider this code:
+
+```js
+var a = 2;
+```
+
+In compilation, `a` is allocated memory. In exection, JS Engine finds `a` in the current scope. If it is present there, it will assign the value `2` to it. If its not found, JS Engine will look for the variable in the outercontaining scopes. The process of looking in the outercontaining scopes is continued until the global scope is reached.
+
+If the variable is not found in global scope, a `Reference Error` is thrown, if we are in `strict mode`. However, in `non-strict mode`, the variable is created in the global scope.
 
 ## What are Scopes in JavaScript?
 
