@@ -221,3 +221,4 @@ The promises returned by the iterator function are not handled. So if one of the
 - [Callbacks in JavaScript](https://stackoverflow.com/questions/9596276/how-to-explain-callbacks-in-plain-english-how-are-they-different-from-calling-o)
 - [Async Loops](https://www.theanshuman.dev/articles/asynchronous-loops-in-javascript-using-foreach-vs-map-vs-for-loop-5020)
 - [For loop vs ForEach](https://medium.com/@moucodes/exploring-the-difference-between-using-async-await-in-a-for-loop-and-foreach-739c9ebeb64a)
+- [ForEach issues](https://gist.github.com/joeytwiddle/37d2085425c049629b80956d3c618971)
