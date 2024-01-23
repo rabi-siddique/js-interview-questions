@@ -201,7 +201,23 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 Promise.all takes an array of promises as input and returns a single Promise that fulfills with an array of the fulfilled values when all of the input promises have been fulfilled. If any of the input promises is rejected, the whole Promise.all is rejected.
 
+## Why forEach loops are not good for async operations?
+
+`forEach` is not designed for asynchronous code. Consider this code:
+
+```js
+const players = await this.getWinners();
+
+await players.forEach(async (player) => {
+  await givePrizeToPlayer(player);
+});
+```
+
+The promises returned by the iterator function are not handled. So if one of them throws an error, the error won't be caught. Also, forEach does not wait for each promise to resolve, all the prizes are awarded in parallel, not serial.
+
 ## Read More Sources
 
 - [Promises vs Callbacks](https://stackoverflow.com/questions/22539815/arent-promises-just-callbacks#:~:text=Promises%20are%20not%20callbacks.,do%2C%20you%20get%20little%20benefit.)
 - [Callbacks in JavaScript](https://stackoverflow.com/questions/9596276/how-to-explain-callbacks-in-plain-english-how-are-they-different-from-calling-o)
+- [Async Loops](https://www.theanshuman.dev/articles/asynchronous-loops-in-javascript-using-foreach-vs-map-vs-for-loop-5020)
+- [For loop vs ForEach](https://medium.com/@moucodes/exploring-the-difference-between-using-async-await-in-a-for-loop-and-foreach-739c9ebeb64a)
