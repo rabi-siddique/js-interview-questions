@@ -163,3 +163,45 @@ console.log(divideFunction(10, 2)); // Output: 5
 - [Scopes of Variables](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript#:~:text=Javascript%20uses%20scope%20chains%20to,linked%20to%20the%20outer%20function.)
 - [UnderStanding Scope and Scope Chain in JavaScript](https://blog.bitsrc.io/understanding-scope-and-scope-chain-in-javascript-f6637978cf53#:~:text=JavaScript%20uses%20lexical%20scope%20which,every%20JavaScript%20developer%20should%20understand.)
 - [Closures](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
+
+# Promises
+
+## What is a Promise?
+
+A promise is a JavaScript object which will produce a single value some time in the future. It is a mechanism to perform async operations in JavaScript. It has three states. These are:
+
+- `Pending`: Starting state of every promise, neither fulfilled nor rejected.
+- `Fulfilled`: The operation completed successfully.
+- `Rejected`: The operation failed.
+
+If the promise is successful, it will produce a resolved value, but if something goes wrong then it will produce a reason why the promise was rejected.
+
+After the promise is resolved or rejected, the following handler methods which take callbacks as arguments are called:
+
+- `then`: When the promise is resolved the callback argument of this function will be called.
+- `catch`: When the promise is rejected the callback argument of this function will be called.
+
+## Explain the difference between Promise and Callback functions.
+
+Both promises and callbacks are used to handle async operations in JavaScript.
+
+Callbacks are functions passed as arguments to other functions, and they are executed after the completion of a certain asynchronous operation or event. Commonly used in event handling, AJAX requests, and other asynchronous tasks.
+
+On the other hand, Promises are JavaScript objects that return a value sometime in the future. A promise after being resolved/rejected, will use `then` and `catch` handlers which take callbacks as arguments. They provide a cleaner way to handle async code compared to callbacks.
+
+## How can you create a Promise that resolves after a specific time delay?
+
+You can use the setTimeout function to create a delay and resolve the Promise after that delay. For example:
+
+```js
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+```
+
+## What is the purpose of the Promise.all method?
+
+Promise.all takes an array of promises as input and returns a single Promise that fulfills with an array of the fulfilled values when all of the input promises have been fulfilled. If any of the input promises is rejected, the whole Promise.all is rejected.
+
+## Read More Sources
+
+- [Promises vs Callbacks](https://stackoverflow.com/questions/22539815/arent-promises-just-callbacks#:~:text=Promises%20are%20not%20callbacks.,do%2C%20you%20get%20little%20benefit.)
+- [Callbacks in JavaScript](https://stackoverflow.com/questions/9596276/how-to-explain-callbacks-in-plain-english-how-are-they-different-from-calling-o)
