@@ -213,7 +213,82 @@ await players.forEach(async (player) => {
 });
 ```
 
-The promises returned by the iterator function are not handled. So if one of them throws an error, the error won't be caught. Also, forEach does not wait for each promise to resolve, all the prizes are awarded in parallel, not serial.
+The promises returned by the iterator function are not handled. So if one of them throws an error, the error won't be caught. Also, forEach does not wait for each promise to resolve, all the promises are awarded in parallel, not serial.
+
+## Describe some practical use cases of Promises
+
+- `Fetching Data from APIs`: When making HTTP requests to APIs to fetch data, promises are commonly used to handle the asynchronous nature of network requests. Libraries like Axios or Fetch API return promises, allowing you to handle the response or error once the request is complete.
+
+```js
+fetch('https://api.rabi.com/data')
+  .then((response) => response.json())
+  .then((data) => {
+    // Handle the fetched data
+  })
+  .catch((error) => {
+    // Handle errors
+  });
+```
+
+- `Handling File Operations`: When reading or writing files asynchronously, promises can be used to handle the completion or failure of these operations. 
+
+```js
+const fs = require('fs').promises;
+
+fs.readFile('file.txt', 'utf-8')
+  .then((data) => {
+    // Handle the file data
+  })
+  .catch((error) => {
+    // Handle errors
+  });
+```
+
+- `Async Functions`: Promises are often used with async/await syntax, which provides a cleaner way to write asynchronous code. Async functions return promises implicitly, allowing you to write asynchronous code in a synchronous-like manner.
+
+```js
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.rabi.com/data');
+    const data = await response.json();
+    // Handle the fetched data
+  } catch (error) {
+    // Handle errors
+  }
+}
+```
+
+- `Delays:`Promises can be useful to implement delays in your code.
+
+```js
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+delay(6000).then(() => {
+  console.log('After 6 seconds');
+});
+```
+
+- `Parallel Tasks`: Imagine you have two tasks that can be done at the same time, like fetching your user info and your posts from a website. You don't want to wait for one to finish before starting the other. Promises can handle this using `Promise.all`.
+
+```js
+const userId = 234;
+
+function fetchUserData(userId) {
+  return fetch(`https://api.rabi.com/users/${userId}`).then((response) =>
+    response.json()
+  );
+}
+
+function fetchUserPosts(userId) {
+  return fetch(`https://api.rabi.com/posts?userId=${userId}`).then((response) =>
+    response.json()
+  );
+}
+
+Promise.all([fetchUserData(userId), fetchUserPosts(userId)]);
+```
 
 ## Read More Sources
 
@@ -222,3 +297,4 @@ The promises returned by the iterator function are not handled. So if one of the
 - [Async Loops](https://www.theanshuman.dev/articles/asynchronous-loops-in-javascript-using-foreach-vs-map-vs-for-loop-5020)
 - [For loop vs ForEach](https://medium.com/@moucodes/exploring-the-difference-between-using-async-await-in-a-for-loop-and-foreach-739c9ebeb64a)
 - [ForEach issues](https://gist.github.com/joeytwiddle/37d2085425c049629b80956d3c618971)
+- [Promise Chaining](https://javascript.info/promise-chaining)
